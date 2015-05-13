@@ -75,6 +75,7 @@
 												<td colspan="2">
 													<input type="button" value="{LANG.price_config_add}" onclick="nv_price_config_add_item();" class="btn btn-info" />
 												</td>
+											</tr>
 										</tfoot>
 										<tbody>
 											<!-- BEGIN: loop -->
@@ -109,6 +110,15 @@
 								</th>
 							<!-- END: typeprice1 -->
 						</tr>
+						<!-- BEGIN: warehouse -->
+						<tr>
+							<th>{LANG.content_product_number}</th>
+							<td colspan="3">
+								<!-- BEGIN: edit --><span class="text-middle"><strong>{rowcontent.product_number}</strong> + </span><input class="form-control" type="number" min="0" maxlength="50" value="0" name="product_number" style="width: 100px;" /><!-- END: edit -->
+								<!-- BEGIN: add --><input class="form-control" type="number" min="0" maxlength="50" value="{rowcontent.product_number}" name="product_number" style="width: 100px;" /><!-- END: add -->
+							</td>
+						</tr>
+						<!-- END: warehouse -->
 					</tbody>
 				</table>
 			</div>
@@ -144,7 +154,7 @@
 						<th>{LANG.content_hometext} <span class="require">(*)</span> {LANG.content_notehome}</th>
 					</tr>
 					<tr>
-						<td>						<textarea class="form-control" rows="4" name="hometext" style="width:98%">{rowcontent.hometext}</textarea></td>
+						<td>{edit_hometext}</td>
 					</tr>
 					<tr>
 						<th>{LANG.content_bodytext} <span class="require">(*)</span> {LANG.content_bodytext_note}</th>
@@ -155,13 +165,75 @@
 							{edit_bodytext}
 						</div></td>
 					</tr>
+					<!-- BEGIN: gift -->
+					<tr>
+						<th>{LANG.content_gift}</th>
+					</tr>
+					<tr>
+						<td>
+							<div class="row">
+								<div class="col-xs-12">
+									<textarea class="form-control" name="gift_content" style="width:100%;height:70px">{rowcontent.gift_content}</textarea>
+								</div>
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="col-xs-24" style="margin-bottom: 5px">
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="form-group">
+														<div class="input-group">
+															<input type="text" class="form-control" name="gift_from" value="{rowcontent.gift_from}" id="gift_from" readonly="readonly" placeholder="{LANG.date_from}">
+															<span class="input-group-btn">
+																<button class="btn btn-default" type="button" id="from-btn">
+																	<em class="fa fa-calendar fa-fix">&nbsp;</em>
+																</button> </span>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<select class="form-control" name="gift_from_h" style="width: 100%">
+														{gift_from_h}
+													</select>
+												</div>
+												<div class="col-xs-6">
+													<select class="form-control" name="gift_from_m" style="width: 100%">
+														{gift_from_m}
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-24">
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="form-group">
+														<div class="input-group">
+															<input type="text" class="form-control" name="gift_to" value="{rowcontent.gift_to}" id="gift_to" readonly="readonly" placeholder="{LANG.date_to}">
+															<span class="input-group-btn">
+																<button class="btn btn-default" type="button" id="to-btn">
+																	<em class="fa fa-calendar fa-fix">&nbsp;</em>
+																</button> </span>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<select class="form-control" name="gift_to_h" style="width: 100%">
+														{gift_to_h}
+													</select>
+												</div>
+												<div class="col-xs-6">
+													<select class="form-control" name="gift_to_m" style="width: 100%">
+														{gift_to_m}
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
 
-					<tr>
-						<th>{LANG.content_promotional}</th>
+								</div>
+							</div>
+						</td>
 					</tr>
-					<tr>
-						<td><textarea class="form-control" name="promotional" style="width:100%;height:50px">{rowcontent.promotional}</textarea></td>
-					</tr>
+					<!-- END: gift -->
 				</tbody>
 			</table>
 			<div id="custom_form">
@@ -304,8 +376,7 @@
 		</div>
 	</div>
 
-	<!-- BEGIN:listgroup -->
-	<div class="table-responsive">
+	<div class="table-responsive" style="display: none" id="list_group">
 		<table class="table table-striped table-bordered table-hover">
 			<tbody>
 				<tr>
@@ -317,7 +388,6 @@
 			</tbody>
 		</table>
 	</div>
-	<!-- END:listgroup -->
 
 	<div class="text-center" style="margin-top: 10px">
 		<!-- BEGIN:status -->
@@ -371,7 +441,12 @@
 		}
 	});
 
-	$("#listgroupid").load('{url_load}');
+	$.get( '{url_load}', function( data ) {
+		if( data != '' ){
+			$('#list_group').show();
+			$("#listgroupid").html( data );
+		}
+	});
 
 </script>
 
