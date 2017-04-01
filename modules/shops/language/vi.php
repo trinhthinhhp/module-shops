@@ -9,7 +9,9 @@
  * @Createdate Mar 04, 2010, 08:22:00 AM
  */
 
-if( ! defined( 'NV_MAINFILE' ) ) die( 'Stop!!!' );
+if (! defined('NV_MAINFILE')) {
+    die('Stop!!!');
+}
 
 $lang_translator['author'] = 'VINADES.,JSC (contact@vinades.vn)';
 $lang_translator['createdate'] = '04/03/2010, 15:22';
@@ -212,7 +214,7 @@ $lang_module['order_msg'] = 'Những mục đánh dấu (<em>*</em>) là bắt b
 $lang_module['order_true_info'] = 'Tôi chắc chắn thông tin đã nhập bên trên là chính xác';
 $lang_module['order_name_err'] = '<em>Bạn chưa nhập họ tên</em>';
 $lang_module['order_email_err'] = '<em>Bạn nhập email không đúng</em>';
-$lang_module['order_address_err'] = '<em>Bạn không nhập địa chỉ</em>';
+$lang_module['order_address_err'] = '<em>Bạn không nhập địa chỉ nhận hàng</em>';
 $lang_module['order_phone_err'] = '<em>Thiếu số điện thoại</em>';
 $lang_module['order_shipping_name_err'] = '<em>Thiếu họ tên người nhận</em>';
 $lang_module['order_shipping_phone_err'] = '<em>Thiếu số điện thoại người nhận</em>';
@@ -317,6 +319,7 @@ $lang_module['update_order'] = 'Thông báo: Hệ thống đã cập nhật lạ
 $lang_module['no_update_order'] = 'Thông báo: Hệ thống không tìm thấy các giao dịch nào mới';
 $lang_module['active_order_dis'] = 'Chức năng đặt hàng trực truyến đã bị tắt';
 $lang_module['group_title'] = 'Nhóm sản phẩm';
+$lang_module['block_cat'] = 'Khối sản phẩm';
 $lang_module['notresult'] = 'Không tìm thấy kết quả nào!!';
 $lang_module['sort_by'] = 'Sắp xếp';
 $lang_module['sort_by_name_az'] = 'Tên tăng dần';

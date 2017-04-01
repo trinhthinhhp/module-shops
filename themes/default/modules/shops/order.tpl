@@ -1,6 +1,6 @@
 <!-- BEGIN: main -->
-<script type="text/javascript" src="{NV_BASE_SITEURL}modules/{MODULE_FILE}/js/select2/select2.min.js"></script>
-<link href="{NV_BASE_SITEURL}modules/{MODULE_FILE}/js/select2/select2.min.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" data-show="after" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/select2/select2.min.js"></script>
+<link href="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/select2/select2.min.css" type="text/css" rel="stylesheet" />
 
 <div class="block clearfix">
 	<div class="step_bar alert alert-success clearfix">
@@ -47,6 +47,16 @@
                         <span class="error">{ERROR.order_phone}</span>
                     </div>
                 </div>
+
+				<!-- BEGIN: order_address -->
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">{LANG.order_address} </label>
+                    <div class="col-sm-18">
+                        <p class="form-control-static"><input name="order_address" class="form-control" value="{DATA.order_address}" /></p>
+                        <span class="error">{ERROR.order_address}</span>
+                    </div>
+                </div>
+                <!-- END: order_address -->
 
 				<!-- BEGIN: shipping_chose -->
                 <div class="form-group">
@@ -153,7 +163,7 @@
 	        			<th>{MAIN_GROUP.title}</th>
 	        			<!-- END: main_group -->
         				<!-- BEGIN: price1 -->
-        				<th class="price text-right">
+        				<th class="price text-right form-tooltip">
         					{LANG.cart_price}
         					<span class="info_icon" data-toggle="tooltip" title="" data-original-title="{LANG.cart_price_note}">&nbsp;</span>
         				</th>
@@ -181,7 +191,11 @@
 						<!-- END: display_group -->
     				</td>
 					<!-- BEGIN: sub_group -->
-	    			<td><a href="{SUB_GROUP.link}" title="{SUB_GROUP.title}">{SUB_GROUP.title}</a></td>
+	    			<td>
+	    				<!-- BEGIN: loop -->
+	    				<a href="{SUB_GROUP.link}" title="{SUB_GROUP.title}">{SUB_GROUP.title}</a>
+	    				<!-- END: loop -->
+	    			</td>
 	    			<!-- END: sub_group -->
     				<!-- BEGIN: price2 -->
     				<td class="money" align="right"><strong>{PRICE.sale_format}</strong></td>
@@ -202,6 +216,7 @@
 		<p class="pull-right">{LANG.coupon}: <strong>{price_coupons}</strong> {unit_config}</p>
 		<div class="clear"></div>
 		<!-- END: total_coupons -->
+
 		<p class="pull-right">{LANG.cart_total}: <strong id="total">{price_total}</strong> {unit_config}</p>
 		<!-- END: price3 -->
 
@@ -220,13 +235,12 @@
 	</form>
 </div>
 
-<script type="text/javascript">
-	var url_load = nv_siteroot + 'index.php?' + nv_lang_variable + '=' + nv_sitelang + '&' + nv_name_variable + '=' + nv_module_name + '&' + nv_fc_variable + '=shippingajax';
-	var urloadcart = nv_siteroot + 'index.php?' + nv_lang_variable + '=' + nv_sitelang + '&' + nv_name_variable + '=' + nv_module_name + '&' + nv_fc_variable + '=loadcart';
+<script type="text/javascript" data-show="after">
+	var url_load = nv_base_siteurl + 'index.php?' + nv_lang_variable + '=' + nv_lang_data + '&' + nv_name_variable + '=' + nv_module_name + '&' + nv_fc_variable + '=shippingajax';
+	var urloadcart = nv_base_siteurl + 'index.php?' + nv_lang_variable + '=' + nv_lang_data + '&' + nv_name_variable + '=' + nv_module_name + '&' + nv_fc_variable + '=loadcart';
 	var order_shipping = '{DATA.order_shipping}';
 
 	$(document).ready(function() {
-		$('[data-toggle="tooltip"]').tooltip();
 
 		$("#location").select2({
 			language: "en"
@@ -248,7 +262,7 @@
 </script>
 
 <!-- BEGIN: shipping_javascript -->
-<script type="text/javascript">
+<script type="text/javascript" data-show="after">
 	$(document).ready(function() {
 		var shops_id = $('input[name="shops"]:checked');
 		var carrier_id = $('input[name="carrier"]:checked');

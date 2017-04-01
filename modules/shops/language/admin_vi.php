@@ -9,7 +9,9 @@
  * @Createdate Mar 04, 2010, 08:22:00 AM
  */
 
-if( ! defined( 'NV_ADMIN' ) or ! defined( 'NV_MAINFILE' ) ) die( 'Stop!!!' );
+if (! defined('NV_ADMIN') or ! defined('NV_MAINFILE')) {
+    die('Stop!!!');
+}
 
 $lang_translator['author'] = 'VINADES.,JSC (contact@vinades.vn)';
 $lang_translator['createdate'] = '04/03/2010, 15:22';
@@ -20,6 +22,8 @@ $lang_translator['langtype'] = 'lang_module';
 $lang_module['group_select_info'] = 'Nếu chọn "Nhóm thành viên", hãy đánh dấu vào các nhóm cho phép';
 $lang_module['categories'] = 'Loại sản phẩm';
 $lang_module['save'] = 'Lưu thay đổi';
+$lang_module['back'] = 'Quay lại';
+$lang_module['continue'] = 'Tiếp tục';
 $lang_module['action'] = 'Thực hiện';
 $lang_module['reset'] = 'Xóa trắng';
 $lang_module['move'] = 'Di chuyển sản phẩm';
@@ -63,6 +67,7 @@ $lang_module['siteinfo_expired'] = 'Số sản phẩm đã hết hạn';
 $lang_module['siteinfo_exptime'] = 'Số sản phẩm sắp hết hạn';
 $lang_module['siteinfo_tags_incomplete'] = 'Số tags chưa có mô tả';
 $lang_module['catalog_name'] = 'Tên loại sản phẩm';
+$lang_module['catalog_name_seo'] = 'Tùy chỉnh Tiêu đề site';
 $lang_module['cat_form'] = 'Dữ liệu tùy biến';
 $lang_module['newday'] = 'Icon tin mới (ngày)';
 
@@ -123,6 +128,10 @@ $lang_module['setting_group_notify'] = 'Các nhóm nhận thông báo từ hệ 
 $lang_module['setting_group_notify_note'] = 'Các thành viên thuộc nhóm được chọn sẽ nhận thông báo qua email khi có hoạt động mới (đơn hàng mới, hoàn tất thanh toán,...).';
 $lang_module['setting_active_tooltip'] = 'Bật chức năng tooltip cho sản phẩm';
 $lang_module['setting_show_product_code'] = 'Hiển thị mã sản phẩm';
+$lang_module['setting_sortdefault'] = 'Sắp xếp mặc định';
+$lang_module['setting_sortdefault_0'] = 'Sản phẩm mới lên đầu';
+$lang_module['setting_sortdefault_1'] = 'Giá tăng dần';
+$lang_module['setting_sortdefault_2'] = 'Giá giảm dần';
 $lang_module['setting_active_wishlist'] = 'Sử dụng chức năng Sản phẩm yêu thích';
 $lang_module['setting_active_gift'] = 'Sử dụng chức năng nhận quà tặng';
 $lang_module['setting_active_warehouse'] = 'Sử dụng chức năng nhập kho';
@@ -130,7 +139,9 @@ $lang_module['setting_auto_tags'] = 'Tự động tạo từ khóa cho bài vi�
 $lang_module['setting_tags_remind'] = 'Nhắc nhở các từ khóa không có mô tả';
 $lang_module['setting_facebookAppID'] = 'Facebook App ID';
 $lang_module['setting_facebookAppIDNote'] = ' (Có dạng 1419186468293063, <a href="http://wiki.nukeviet.vn/nukeviet:admin:news:facebookapi" target="_blank">xem chi tiết</a>)';
+$lang_module['setting_alias_lower'] = 'Chuyển Liên kết tĩnh về chữ thường khi tạo mới';
 $lang_module['setting_socialbutton'] = 'Hiển thị các công cụ Like facebook, G+, Twitter khi xem bài viết';
+$lang_module['template_setting_active'] = 'Sử dụng chức Tùy biến dữ liệu';
 $lang_module['setup_payment'] = 'Tích hợp cổng thanh toán';
 $lang_module['setup_payment_guide'] = 'Xem hướng dẫn Tích hợp cổng thanh toán';
 $lang_module['setting_stt'] = 'STT';
@@ -152,6 +163,12 @@ $lang_module['cat_have_product_err'] = 'Bạn không thể thêm loại sản ph
 $lang_module['cat_do_not_add'] = 'Không thêm được';
 $lang_module['error_cat_name'] = 'Không có tên chủ đề';
 $lang_module['error_weight'] = 'Lỗi: Bạn cần nhập khối lượng sản phẩm';
+$lang_module['error_cat_empty_title'] = 'Chưa có loại sản phẩm';
+$lang_module['error_cat_empty_content'] = 'Bạn cần nhập một số chủ đề cho sản phẩm trước khi thêm mới một sản phẩm.<br />Hệ thống sẽ chuyển bạn đến trang <strong>Quản lý loại sản phẩm</strong> trong giây lát.';
+$lang_module['error_punit_empty_title'] = 'Chưa có đơn vị sản phẩm';
+$lang_module['error_punit_empty_content'] = 'Bạn cần nhập đơn vị sản phẩm trước khi thêm mới một sản phẩm.<br />Hệ thống sẽ chuyển bạn đến trang <strong>Quản lý đơn vị sản phẩm</strong> trong giây lát.';
+$lang_module['error_munit_empty_title'] = 'Chưa có đơn vị tiền tệ';
+$lang_module['error_munit_empty_content'] = 'Bạn cần nhập đơn vị tiền tệ trước khi thêm mới một sản phẩm.<br />Hệ thống sẽ chuyển bạn đến trang <strong>Quản lý đơn vị tiền tệ</strong> trong giây lát.';
 $lang_module['search'] = 'Tìm kiếm';
 $lang_module['search_type'] = 'Tìm kiếm theo';
 $lang_module['search_id'] = 'ID';
@@ -253,7 +270,7 @@ $lang_module['order_title'] = 'Đơn đặt hàng';
 $lang_module['order_name'] = 'Tên người đặt';
 $lang_module['order_email'] = 'Email người đặt';
 $lang_module['order_phone'] = 'Điện thoại';
-$lang_module['order_address'] = 'Địa chỉ';
+$lang_module['order_address'] = 'Địa chỉ nhận hàng';
 $lang_module['order_total'] = 'Tổng tiền';
 $lang_module['order_note'] = 'Ghi chú đơn hàng';
 $lang_module['order_note_empty'] = 'Không có ghi chú';
@@ -355,6 +372,9 @@ $lang_module['product_unit'] = 'sản phẩm';
 $lang_module['product_comment'] = 'bình luận';
 $lang_module['product_order'] = 'đơn đặt';
 $lang_module['detail_info'] = 'Chi tiết';
+$lang_module['tag'] = 'Tùy biến SEO';
+$lang_module['tag_title'] = 'Thẻ tiêu đề';
+$lang_module['tag_description'] = 'Thẻ mô tả';
 
 $lang_module['group'] = 'Nhóm sản phẩm';
 $lang_module['group_sub_sl'] = 'Nhóm chính';
@@ -377,6 +397,7 @@ $lang_module['delgroup_no_group'] = 'Không thuộc nhóm nào';
 $lang_module['content_group'] = 'Là sản phẩm thuộc nhóm';
 $lang_module['add_otherimage'] = 'Thêm hình minh họa khác';
 $lang_module['file_selectfile'] = 'Chọn hình ảnh';
+$lang_module['groupview_page'] = 'Cách thể hiện nhóm sản phẩm';
 $lang_module['group_of'] = 'Của loại sản phẩm';
 $lang_module['group_of_none'] = 'Không của loại nào';
 $lang_module['setting_group_price'] = 'Cấu hình lọc sản phẩm theo giá';
@@ -405,6 +426,7 @@ $lang_module['error_required_title'] = 'Lỗi: bạn cần nhập dữ liệu ch
 $lang_module['error_required_begin_time'] = 'Lỗi: bạn cần nhập dữ liệu cho Ngày bắt đầu';
 $lang_module['error_required_end_time'] = 'Lỗi: bạn cần nhập dữ liệu cho Ngày kết thúc';
 $lang_module['error_required_config'] = 'Lỗi: bạn cần nhập dữ liệu cho Cấu hình';
+$lang_module['error_symbol'] = 'Lỗi: bạn cần nhập dữ liệu cho Ký hiệu';
 
 $lang_module['discount_add'] = 'Thêm mới giảm giá';
 $lang_module['discount_edit'] = 'Sửa giảm giá';
@@ -487,9 +509,10 @@ $lang_module['point_fullname'] = 'Họ tên khách hàng';
 $lang_module['point_email'] = 'Email khách hàng';
 $lang_module['setting_point'] = 'Cấu hình điểm tích lũy';
 $lang_module['setting_point_active'] = 'Kích hoạt tính năng điểm tích lũy';
-$lang_module['setting_point_conversion'] = 'Tỉ lệ quy đổi';
+$lang_module['setting_point_conversion'] = 'Tỉ lệ quy đổi khi lấy điểm thanh toán';
 $lang_module['setting_point_value_conversion'] = 'Giá trị quy đổi';
 $lang_module['setting_point_new_order'] = 'Số điểm thưởng khi tạo đơn hàng mới';
+$lang_module['setting_money_to_point'] = 'Số tiền để được 1 điểm thưởng khi tạo đơn hàng mới';
 $lang_module['setting_point_1'] = '1 điểm';
 $lang_module['cat_allow_point'] = 'Cho phép tích lũy điểm với các sản phẩm loại này';
 $lang_module['cat_number_point'] = 'Số điểm thưởng khi mua các sản phẩm loại này';
@@ -565,6 +588,7 @@ $lang_module['listtemplate_error'] = "Chưa chọn nhóm dữ liệu";
 
 //field
 $lang_module['fields'] = 'Tùy biến dữ liệu';
+$lang_module['field_tab_page'] = 'Cấu hình hiển thị dữ liệu tùy biến';
 $lang_module['captionform_add'] = 'Thêm trường dữ liệu';
 $lang_module['captionform_edit'] = 'Sửa trường dữ liệu';
 $lang_module['field_edit'] = 'Sửa';
@@ -616,6 +640,8 @@ $lang_module['field_options_choice'] = 'Các tùy chọn';
 $lang_module['field_number'] = 'STT';
 $lang_module['field_value'] = 'Giá trị';
 $lang_module['field_text'] = 'Miêu tả';
+$lang_module['field_info_list'] = 'Thông tin sản phẩm';
+$lang_module['field_info_list_note'] = 'Hiển thị trong phần thông tin sản phẩm';
 $lang_module['field_add_choice'] = 'Thêm lựa chọn';
 $lang_module['field_date_error'] = 'Giá trị của Min Date cần nhỏ hơn Max Date';
 $lang_module['field_number_error'] = 'Giá trị của Min Value cần nhỏ hơn Max Value';
@@ -658,6 +684,7 @@ $lang_module['download_file_time'] = 'Thời gian thêm';
 $lang_module['download_file_count'] = 'Số sản phẩm liên kết';
 $lang_module['download_file_description'] = 'Mô tả tài liệu';
 $lang_module['download_file_path'] = 'Đường dẫn tài liệu';
+$lang_module['download_file_path_note'] = 'Chọn tập tin hoặc nhập đường dẫn bên ngoài';
 $lang_module['download_file_chose'] = 'Chọn tập tin';
 $lang_module['download_file_chose_h'] = 'Chọn tài liệu đã có';
 $lang_module['download_file_or'] = 'hoặc';
@@ -677,8 +704,6 @@ $lang_module['download_setting_active'] = 'Sử dụng chức Quản lý file t�
 $lang_module['download_setting_groups'] = 'Ai được phép tải tập tin';
 $lang_module['download_setting_groups_module'] = 'Theo cấu hình module';
 
-$lang_module['template_setting_active'] = 'Sử dụng chức Tùy biến dữ liệu';
-
 //Lang for function tabs
 $lang_module['tabs'] = 'Quản lý tab';
 $lang_module['tabs_icon'] = 'Biểu tượng';
@@ -691,10 +716,12 @@ $lang_module['tabs_content_rate'] = 'Đánh giá sản phẩm';
 $lang_module['tabs_content_customdata'] = 'Dữ liệu tùy biến';
 $lang_module['error_required_content'] = 'Lỗi: bạn cần nhập dữ liệu cho Nội dung';
 
-//Lang for function field
-$lang_module['field_tab_page'] = 'Hiển thị dữ liệu cho tab';
-$lang_module['introduce'] = 'Giới thiệu';
-
-$lang_module['updateprice']='Cập nhật giá theo loại';
+$lang_module['updateprice'] = 'Cập nhật giá theo loại';
 $lang_module['cateid'] = 'Loại sản phẩm';
 $lang_module['newprice'] = 'Giá mới';
+
+$lang_module['ad_block_show'] = 'Hiển thị các block phụ';
+$lang_module['ad_block_top'] = 'Block bên trên chuyên mục';
+$lang_module['ad_block_bot'] = 'Block bên dưới chuyên mục';
+
+

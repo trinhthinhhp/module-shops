@@ -30,6 +30,17 @@
 					</div>
 				</div>
 
+				<!-- BEGIN: order_address -->
+				<div class="row">
+					<div class="col-md-10">
+						<strong>{LANG.order_address}:</strong>
+					</div>
+					<div class="col-md-14">
+						{DATA.order_address}
+					</div>
+				</div>
+				<!-- END: order_address -->
+
 				<div class="row">
 					<div class="col-md-10">
 						<strong>{LANG.order_date}:</strong>
@@ -92,7 +103,11 @@
 						<!-- END: group -->
 					</p><!-- END: display_group --></td>
 					<!-- BEGIN: sub_group -->
-	    			<td><a href="{SUB_GROUP.link}" title="{SUB_GROUP.title}">{SUB_GROUP.title}</a></td>
+	    			<td>
+	    				<!-- BEGIN: loop -->
+	    				<a href="{SUB_GROUP.link}" title="{SUB_GROUP.title}">{SUB_GROUP.title}</a>
+	    				<!-- END: loop -->
+	    			</td>
 	    			<!-- END: sub_group -->
 					<!-- BEGIN: price2 -->
 					<td class="money text-right"><strong>{product_price}</strong></td>
@@ -214,7 +229,7 @@
 <form action="" method="post">
 	<input type="hidden" value="{order_id}" name="order_id"><input type="hidden" value="1" name="save">
 </form>
-<script type="text/javascript">
+<script type="text/javascript" data-show="after">
 	$(function() {
 		$('[data-toggle="tooltip"]').tooltip();
 

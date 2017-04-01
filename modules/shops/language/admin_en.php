@@ -9,7 +9,9 @@
 * @Createdate Jul 04, 2011, 03:18:00 AM
 */
 
-if( ! defined( 'NV_ADMIN' ) or ! defined( 'NV_MAINFILE' ) ) die( 'Stop!!!' );
+if (! defined('NV_ADMIN') or ! defined('NV_MAINFILE')) {
+    die('Stop!!!');
+}
 
 $lang_translator['author'] = 'Phạm Chí Quang';
 $lang_translator['createdate'] = '04/07/2011, 10:18';
@@ -63,6 +65,7 @@ $lang_module['siteinfo_expired'] = 'Product has expired';
 $lang_module['siteinfo_exptime'] = 'Products to expire';
 $lang_module['siteinfo_tags_incomplete'] = 'Tags no description';
 $lang_module['catalog_name'] = 'Category name';
+$lang_module['catalog_name_seo'] = 'Modification Le titre du site';
 $lang_module['cat_form'] = 'Custom';
 $lang_module['newday'] = 'New day';
 $lang_module['add_block_cat'] = 'Add a block group';
@@ -129,6 +132,7 @@ $lang_module['setting_auto_tags'] = 'Automatically generate keywords for article
 $lang_module['setting_tags_remind'] = 'Remind tag has no description';
 $lang_module['setting_facebookAppID'] = 'Facebook App ID';
 $lang_module['setting_facebookAppIDNote'] = '(There format 1419186468293063, <a href="http://wiki.nukeviet.vn/nukeviet:admin:news:facebookapi" target="_blank">view detail</a>)';
+$lang_module['setting_alias_lower'] = 'Alias to lowercase when creating a new';
 $lang_module['setting_socialbutton'] = 'Show tools Like facebook, G +, Twitter while watching posts';
 $lang_module['setup_payment'] = 'Integrate the on-line payment';
 $lang_module['setup_payment_guide'] = 'See the tutorial';
@@ -374,6 +378,7 @@ $lang_module['delgroup_no_group'] = 'No group';
 $lang_module['content_group'] = 'Product Group';
 $lang_module['add_otherimage'] = 'Add picture';
 $lang_module['file_selectfile'] = 'Select image';
+$lang_module['groupview_page'] = 'Display method of product';
 $lang_module['group_of'] = 'types of products';
 $lang_module['group_of_none'] = 'Not included in any group';
 $lang_module['setting_group_price'] = 'Configure filter products by price';
@@ -399,6 +404,7 @@ $lang_module['error_required_title'] = 'Error: Required fields enter the Title';
 $lang_module['error_required_begin_time'] = 'Error: Required fields enter the Begin time';
 $lang_module['error_required_end_time'] = 'Error: Required fields enter the End time';
 $lang_module['error_required_config'] = 'Error: Required fields enter the Config';
+$lang_module['error_symbol'] = 'Error: Required fields enter the symbol';
 $lang_module['discount_add'] = 'Add new discount';
 $lang_module['discount_edit'] = 'Edit discount';
 $lang_module['discount_from'] = 'From production';
@@ -623,6 +629,7 @@ $lang_module['download_file_time'] = 'Time added';
 $lang_module['download_file_count'] = 'Number products links';
 $lang_module['download_file_description'] = 'Description document';
 $lang_module['download_file_path'] = 'Path document';
+$lang_module['download_file_path_note'] = 'Browse file or fill url outside';
 $lang_module['download_file_chose'] = 'Choose File';
 $lang_module['download_file_chose_h'] = 'Select document existing';
 $lang_module['download_file_or'] = 'or';

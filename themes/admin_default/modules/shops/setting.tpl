@@ -164,8 +164,22 @@
 					<td><input class="form-control w150" name="facebookappid" value="{DATA.facebookappid}" type="text"/><span class="text-middle">{LANG.setting_facebookAppIDNote}</span></td>
 				</tr>
 				<tr>
+					<th>{LANG.setting_alias_lower}</th>
+					<td><input type="checkbox" value="1" name="alias_lower"{ck_alias_lower} id="alias_lower"/></td>
+				</tr>
+				<tr>
 					<td><strong>{LANG.setting_show_product_code}</strong></td>
 					<td><input type="checkbox" value="1" name="show_product_code" {ck_show_product_code} id="show_product_code" /></td>
+				</tr>
+				<tr>
+					<td><strong>{LANG.setting_sortdefault}</strong></td>
+					<td>
+						<select name="sortdefault" class="form-control w200">
+							<!-- BEGIN: sortdefault -->
+							<option value="{SORTDEFAULT.index}" {SORTDEFAULT.selected}>{SORTDEFAULT.value}</option>
+							<!-- END: sortdefault -->
+						</select>
+					</td>
 				</tr>
 			</tbody>
 		</table>
@@ -275,11 +289,15 @@
 			<tbody>
 				<tr>
 					<td><strong>{LANG.setting_point_conversion}</strong></td>
-					<td><input type="text" name="point_conversion" class="form-control" value="{DATA.point_conversion}" /><span class="text-middle">{DATA.money_unit} / {LANG.setting_point_1}</span></td>
+					<td><input type="text" name="point_conversion" class="form-control" value="{DATA.point_conversion}" onkeyup="this.value=FormatNumber(this.value);"/> <span class="text-middle">{DATA.money_unit} / {LANG.setting_point_1}</span></td>
 				</tr>
 				<tr>
 					<td><strong>{LANG.setting_point_new_order}</strong></td>
 					<td><input type="text" name="point_new_order" class="form-control" value="{DATA.point_new_order}" /></td>
+				</tr>
+				<tr>
+					<td><strong>{LANG.setting_money_to_point}</strong></td>
+					<td><input type="text" name="money_to_point" class="form-control" value="{DATA.money_to_point}" onkeyup="this.value=FormatNumber(this.value);"/> <span class="text-middle">{DATA.money_unit}</span></td>
 				</tr>
 			</tbody>
 		</table>

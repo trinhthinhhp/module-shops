@@ -22,14 +22,14 @@
 </div>
 <!-- END: form_login -->
 
-<script type="text/javascript">
+<script type="text/javascript" data-show="after">
 	$(document).ready(function(){
 		$('[data-toggle="tooltip"]').tooltip({ container: 'body' });
 	});
 
 	$('button.download_files').click(function(){
 		var id_files = $(this).attr('id');
-		window.location.href = nv_siteroot + "index.php?" + nv_lang_variable + "=" + nv_sitelang + "&" + nv_name_variable + "=" + nv_module_name + "&" + nv_fc_variable + "=download&id_files=" + id_files + '&id_rows={proid}';
+		window.location.href = nv_base_siteurl + "index.php?" + nv_lang_variable + "=" + nv_lang_data + "&" + nv_name_variable + "=" + nv_module_name + "&" + nv_fc_variable + "=download&id_files=" + id_files + '&id_rows={proid}';
 		return false;
 	});
 </script>
